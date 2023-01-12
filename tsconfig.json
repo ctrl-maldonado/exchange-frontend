@@ -7,13 +7,16 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
+    "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+      //"@angular/*": ["./node_modules/@angular/*"]
+    },
     "lib": [
       "es2018",
       "dom"

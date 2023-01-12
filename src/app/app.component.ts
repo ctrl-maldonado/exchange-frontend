@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Item } from './items/item';
 import { ItemService } from './items/item.service';
 import { User } from './users/user';
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit{
   public users: User[];
   public items: Item[];
 
-  constructor(private userService: UserService, private itemService: ItemService){}
+  constructor(private userService: UserService, private itemService: ItemService, private router:Router){}
 
   ngOnInit() {
       this.getUsers();
