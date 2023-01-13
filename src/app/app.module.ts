@@ -4,8 +4,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
-import { RouterModule, Routes } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routes } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 

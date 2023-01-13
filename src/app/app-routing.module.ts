@@ -5,7 +5,7 @@ import { ItemGridComponent } from './pages/item-grid/item-grid/item-grid.compone
 import { LoginComponent } from './pages/login/login/login.component';
 
 
-const routes: Routes = [
+export const routes: Routes = [
     { path:'login', component: LoginComponent },
     { path:'itemGrid', component: ItemGridComponent },
     { path: "", component: HomeComponent },
@@ -13,7 +13,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes, {
+    relativeLinkResolution: 'legacy',
+    onSameUrlNavigation: 'reload'
+   })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
