@@ -10,9 +10,11 @@ import { LoginComponent } from './login/login/login.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule }from '@angular/material/input';
+import { ItemGridComponent } from './item-grid/item-grid/item-grid.component';
+
 
 @NgModule({
-  declarations: [HomeComponent, LoginComponent],
+  declarations: [HomeComponent, LoginComponent, ItemGridComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -24,6 +26,6 @@ import { MatInputModule }from '@angular/material/input';
     ReactiveFormsModule
     // FontAwesomeModule
   ],
-  exports: [HomeComponent, LoginComponent]
+  exports: [HomeComponent, LoginComponent, ItemGridComponent]
 })
 export class PagesModule { }
