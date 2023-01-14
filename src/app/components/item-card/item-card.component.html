@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;">
+<!--<div class="card" style="width: 18rem; border-color:#f4433669;">
     <img src="./assets/img/items/{{item.itemId}}.jpg" alt="" class="card-img-top">
     <div class="card-body">
         <h5 class="card-title">{{item.itemName}}</h5>
@@ -6,3 +6,13 @@
         <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
 </div>
+-->
+
+<mat-card class="example-card">
+    <img mat-card-image class="img-size" src="./assets/img/items/{{item.itemId}}.jpg"  alt="" style="margin-bottom:10px; object-fit: cover; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+    <mat-card-content style="border-top-left-radius:10px;">
+        <mat-card-title>{{item.itemName}}</mat-card-title>
+        <mat-card-subtitle style="margin-bottom: 10px;">{{item.user.userName}}</mat-card-subtitle>
+      {{text}}
+    </mat-card-content>
+  </mat-card>

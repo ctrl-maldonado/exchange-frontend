@@ -5,5 +5,9 @@ export interface Item {
     itemName: string;
     user: User;
     userSaved: User;
+    description: string;
+    color: string;
+    brand: string;
+    date: number;
     //category: Category;
 }

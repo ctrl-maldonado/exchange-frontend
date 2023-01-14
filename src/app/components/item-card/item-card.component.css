@@ -1,0 +1,14 @@
+.example-card {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 8px;
+  }
+
+  .img-size {
+    width: 255px;
+    height: 300px;
+  }
+  .mat-card-xl-image{
+
+    padding: 0;
+  }
