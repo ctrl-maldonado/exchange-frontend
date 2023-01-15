@@ -16,4 +16,17 @@ export class ItemCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  nameFunction(item){
+    //console.log("hit");
+    let name = item.itemName;
+    if (name.includes("ü")) {
+      name = name.replace("ü", "ue");
+    } else if (name.includes("ä")) {
+      name = name.replace("ä", "ae");
+    } else if (name.includes("ö")) {
+      name = name.replace("ö", "oe");
+    }
+
+    return name;
+  }
 }

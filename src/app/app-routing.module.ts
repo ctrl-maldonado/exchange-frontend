@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login/login.component';
 export const routes: Routes = [
     { path:'login', component: LoginComponent },
     { path:'itemGrid', component: ItemGridComponent },
+    { path:'itemGrid/:categoryId', component: ItemGridComponent },
     { path: "", component: HomeComponent },
     { path:"**", component: HomeComponent }
 ];

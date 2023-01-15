@@ -24,4 +24,9 @@ export class NavbarComponent implements OnInit {
   login(){
     this.router.navigateByUrl('/login')
   }
+
+  darkMode(){
+    const myElement = document.querySelector('#my-element');
+    console.log(myElement);
+  }
 }

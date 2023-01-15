@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   public items: Item[];
   public categories: Category[]
   public loggedInUser: User;
+
   constructor(private itemService:ItemService, private user:AuthService, private categoryService:CategoryService, private router:Router) { }
 
   ngOnInit() {
@@ -27,9 +28,23 @@ export class HomeComponent implements OnInit {
 
     this.getCategories().subscribe(res => {
       this.categories = res;
-    })
+    });
     //this.loggedInUser = this.user.loggedInUser;
     //console.log(this.loggedInUser);
+    const kleidung = document.querySelector(".kleidung");
+    kleidung.addEventListener('click', e => {
+      this.router.navigate(['/itemGrid/3']);
+    });
+
+    const elektronik = document.querySelector(".elektronik");
+    elektronik.addEventListener('click', e => {
+      this.router.navigate(['/itemGrid/1']);
+    });
+
+    const haushalt = document.querySelector(".haushalt");
+    haushalt.addEventListener('click', e => {
+      this.router.navigate(['/itemGrid/2']);
+    });
   }
 
   getCategories(): Observable<Category[]>{

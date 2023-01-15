@@ -16,4 +16,8 @@ export class ItemService {
     return this.http.get<Item[]>(`${this.apiServerUrl}/items`)
   }
   
+  public getItemsByCategory(num) {
+    console.log(`${this.apiServerUrl}/item/${num}`)
+    return this.http.get<Item[]>(`${this.apiServerUrl}/item/${num}`)
+  }
 }

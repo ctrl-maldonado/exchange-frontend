@@ -9,10 +9,11 @@
 -->
 
 <mat-card class="example-card">
-    <img mat-card-image class="img-size" src="./assets/img/items/{{item.itemId}}.jpg"  alt="" style="margin-bottom:10px; object-fit: cover; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+    <img mat-card-image class="img-size" src="./assets/img/items/{{nameFunction(item)}}.jpg" alt=""
+        style="margin-bottom:10px; object-fit: contain; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
     <mat-card-content style="border-top-left-radius:10px;">
         <mat-card-title>{{item.itemName}}</mat-card-title>
         <mat-card-subtitle style="margin-bottom: 10px;">{{item.user.userName}}</mat-card-subtitle>
-      {{text}}
+        {{item.description}}
     </mat-card-content>
-  </mat-card>
+</mat-card>
