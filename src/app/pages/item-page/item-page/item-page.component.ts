@@ -49,7 +49,6 @@ export class ItemPageComponent implements OnInit {
 
   getDate(){
     const dateInMil = this.item.date;
-    console.log(dateInMil);
     const date = (new Date(dateInMil)).toLocaleDateString();
     return date;
   }

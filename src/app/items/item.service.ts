@@ -20,4 +20,9 @@ export class ItemService {
     console.log(`${this.apiServerUrl}/item/${num}`)
     return this.http.get<Item[]>(`${this.apiServerUrl}/item/${num}`)
   }
+
+  public getItemById(num) {
+    console.log(`${this.apiServerUrl}/findByItemId/${num}`);
+    return this.http.get<Item>(`${this.apiServerUrl}/findByItemId/${num}`);
+  }
 }

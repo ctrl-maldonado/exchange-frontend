@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Item } from 'src/app/items/item';
@@ -11,38 +11,48 @@ import { User } from 'src/app/users/user';
   templateUrl: './item-grid.component.html',
   styleUrls: ['./item-grid.component.css']
 })
+
+@Injectable({
+  providedIn: "root"
+})
+
 export class ItemGridComponent implements OnInit {
 
   public items: Item[];
 
-  constructor(private itemService:ItemService, private user:AuthService, private router:Router) { }
+  constructor(private itemService: ItemService, private user: AuthService, private router: Router) { }
 
   ngOnInit() {
     //console.log(this.router.url);
-    if (this.router.url === "/itemGrid"){
+    if (this.router.url === "/itemGrid") {
       this.getItems().subscribe(res => {
         this.items = res;
       });
-    } else if (this.router.url === "/itemGrid/1"){
+    } else if (this.router.url === "/itemGrid/1") {
       this.getItemsByCategory(1).subscribe(res => {
         this.items = res;
       });
-    } else if (this.router.url === "/itemGrid/2"){
+    } else if (this.router.url === "/itemGrid/2") {
       this.getItemsByCategory(2).subscribe(res => {
         this.items = res;
       });
-    } else if (this.router.url === "/itemGrid/3"){
+    } else if (this.router.url === "/itemGrid/3") {
       this.getItemsByCategory(3).subscribe(res => {
         this.items = res;
       });
     }
   }
 
-  getItems(): Observable<Item[]>{
+  getItems(): Observable<Item[]> {
     return this.itemService.getItems();
   }
 
-  getItemsByCategory(num): Observable<Item[]>{
+  getItemsByCategory(num): Observable<Item[]> {
     return this.itemService.getItemsByCategory(num);
+  }
+
+  updateItems(items) {
+    this.items = items;
+
   }
 }

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { Category } from 'src/app/categories/category';
 import { CategoryService } from 'src/app/categories/category.service';
+import { ItemGridComponent } from '../../item-grid/item-grid/item-grid.component';
 
 @Component({
   selector: 'app-home',
@@ -19,32 +20,15 @@ export class HomeComponent implements OnInit {
   public categories: Category[]
   public loggedInUser: User;
 
-  constructor(private itemService:ItemService, private user:AuthService, private categoryService:CategoryService, private router:Router) { }
+  constructor(private itemService:ItemService, private user:AuthService, private itemGrid:ItemGridComponent, private categoryService:CategoryService, private router:Router) { }
 
   ngOnInit() {
-    this.getItems().subscribe(res => {
-      this.items = res;
-    });
 
     this.getCategories().subscribe(res => {
       this.categories = res;
     });
     //this.loggedInUser = this.user.loggedInUser;
     //console.log(this.loggedInUser);
-    const kleidung = document.querySelector(".kleidung");
-    kleidung.addEventListener('click', e => {
-      this.router.navigate(['/itemGrid/3']);
-    });
-
-    const elektronik = document.querySelector(".elektronik");
-    elektronik.addEventListener('click', e => {
-      this.router.navigate(['/itemGrid/1']);
-    });
-
-    const haushalt = document.querySelector(".haushalt");
-    haushalt.addEventListener('click', e => {
-      this.router.navigate(['/itemGrid/2']);
-    });
   }
 
   getCategories(): Observable<Category[]>{
@@ -57,5 +41,17 @@ export class HomeComponent implements OnInit {
 
   goToAll(){
     this.router.navigateByUrl('/itemGrid');
+  }
+
+  goToElektronik(){
+    this.router.navigate(['/itemGrid/1']);
+  }
+
+  goToHaushalt(){
+    this.router.navigate(['/itemGrid/2']);
+  }
+
+  goToKleidung(){
+    this.router.navigate(['/itemGrid/3']);
   }
 }

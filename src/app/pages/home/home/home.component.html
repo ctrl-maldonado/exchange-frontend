@@ -2,8 +2,11 @@
     <div style="margin-top:-5px; margin-bottom:5px;">
         <app-navbar></app-navbar>
     </div>
-    <div class="container1 row">
-        <div class="col-6"></div>
+    <div class="container1 row" style="padding:0;">
+        <div class="col-6">
+            <img src="./assets/img/Home-Img.png" style="position: absolute; max-height: 100%;" alt="">
+        </div>
+
         <div class="col-6 center-aLeft">
             <div class="col-8">
                 <div class="h3">Kaufst du noch, oder tauschst du schon?</div>
@@ -11,20 +14,52 @@
                 <div>Schaffe Platz für neue Schätze</div>
                 <br>
                 <button mat-raised-button color="warn" (click)="goToAll()">Tausche Los</button>
+
             </div>
         </div>
     </div>
     <div class="row" style="margin-top:15px; margin-bottom: 15px;">
         <div class="col-6" style="padding-left: 0; padding-right: 7.5px;">
-            <div class="container2 h5 elektronik" style="height: 415px; padding: 40px;">{{categories[0].categoryName}}</div>
-        </div>
-        <div class="col-6" style="padding-right: 0; padding-left: 7.5px;">
-            <div class="container3 h5 haushalt" style="padding: 40px;">{{categories[1].categoryName}}</div>
-            <div class="row" style="margin-top: 15px;">
-                <div class="col-6 pl-0" style="padding-right: 7.5px;">
-                    <div class="container3 h5 kleidung" style="padding: 40px;">{{categories[2].categoryName}}</div>
+            <div class="row" (click)="goToElektronik()" style="background-color: #D9D9D9;">
+                <div class="col-6 container2">
+                    <!--<img src="./assets/img/cat-1-img.png" style="position: absolute; max-height: 100%; padding-bottom: 8px;" alt="">-->
+                    <div class="h5 elektronik" style="height: 415px;">
+                        <!--<img src="./assets/img/cat-1-img.png" style="position: absolute; max-width: 100%; max-height: 100%;" alt="">-->
+                        {{categories[0].categoryName}}
+                    </div>
                 </div>
-                <div class="col-6 pr-0" style="padding-left: 7.5px;">
+                <div class="col-6" style="padding-right: 0%;">
+                    <img src="./assets/img/cat-1-img.png"
+                        style="max-height: 100%; position: absolute; right:0" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-6" style="padding-right: 0;">
+            <div class="row" (click)="goToHaushalt()" style="background-color: #D9D9D9;">
+                <div class="col-6 container3">
+                    <div class="h5 haushalt">
+                        {{categories[1].categoryName}}
+                    </div>
+                </div>
+                <div class="col-6" style="padding-right: 0%;">
+                    <img src="./assets/img/cat-2-img.png" style="max-height: 100%; max-width:100%; display: block;"
+                        alt="">
+                </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-6 pl-0">
+                    <div class="row" (click)="goToKleidung()" style="background-color: #D9D9D9;">
+                        <div class="col-6 container3">
+                            <div class="h5 kleidung">{{categories[2].categoryName}}
+                            </div>
+                        </div>
+                        <div class="col-6" style="padding-right: 0%;">
+                            <img src="./assets/img/cat-3-img.png"
+                                style="max-height: 80%; position: absolute; left: -15px; top: 15%;" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 pr-0" style="padding-left: 7.5px;" (click)="goToAll()">
                     <div class="container3 h5" style="background-color: #f44336; color: white;">Alle <br> Kategorien
                     </div>
                 </div>

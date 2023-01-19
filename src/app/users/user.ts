@@ -6,6 +6,9 @@ export interface User {
     address: string;
     mail: string;
     rating: number;
-    itemList: Array<Item>
-    savedItems: Array<Item>
+    password: string;
+    token: string;
+    email: string;
+    itemList: Array<Item>;
+    savedItems: Array<Item>;
 }

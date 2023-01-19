@@ -8,7 +8,7 @@
 </div>
 -->
 
-<mat-card class="example-card">
+<mat-card class="example-card" (click) ="routeToItemPage(item)">
     <img mat-card-image class="img-size" src="./assets/img/items/{{nameFunction(item)}}.jpg" alt=""
         style="margin-bottom:10px; object-fit: contain; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
     <mat-card-content style="border-top-left-radius:10px;">
